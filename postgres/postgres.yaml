@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: postgres-pvc
+  name: postgres-pvc2
 spec:
   accessModes:
     - ReadWriteOnce
@@ -57,7 +57,7 @@ stringData:
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgres-svc2
+  name: postgres-svc
 spec:
   selector:
     app: postgres
