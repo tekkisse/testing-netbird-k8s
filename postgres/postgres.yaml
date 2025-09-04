@@ -40,11 +40,11 @@ spec:
         - containerPort: 5432
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: postgres-storage
+          name: postgres-storage2
       volumes:
-      - name: postgres-storage
+      - name: postgres-storage2
         persistentVolumeClaim:
-          claimName: postgres-pvc
+          claimName: postgres-pvc2
 ---
 apiVersion: v1
 kind: Secret
@@ -57,7 +57,7 @@ stringData:
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgres-svc
+  name: postgres-svc2
 spec:
   selector:
     app: postgres
