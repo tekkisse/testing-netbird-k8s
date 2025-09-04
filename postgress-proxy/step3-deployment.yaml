@@ -30,7 +30,7 @@ spec:
         - name: NB_SIGNAL_URL
           value: "https://signal.netbird.io"    # Or your self-hosted signal
         - name: NB_HOSTNAME
-          value: "postgres-proxy"
+          value: "postgres-proxy2"
       - name: haproxy
         image: haproxy:latest
         ports:
