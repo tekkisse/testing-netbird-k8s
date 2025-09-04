@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: haproxy-config
+data:
+  haproxy.cfg: |
+    global
+      log stdout format raw local0
+
+    defaults
+      log global
+      mode tcp
+      timeout connect 10s
+      timeout client  1h
+      timeout server  1h
+
+    frontend pgsql_in
+      bind 0.0.0.0:5432
+      default_backend pgsql_out
+
+    backend pgsql_out
+      mode tcp
+      option tcp-check
+      server remote_pgsql postgres-lb-121-252.netbird.cloud.:5432 check
