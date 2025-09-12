@@ -21,4 +21,4 @@ data:
     backend pgsql_out
       mode tcp
       option tcp-check
-      server remote_pgsql postgres-lb-229-73.netbird.cloud.:5432 check
+      server remote_pgsql postgres-lb-157-185.netbird.cloud.:5432 check
